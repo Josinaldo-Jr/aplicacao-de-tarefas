@@ -31,6 +31,19 @@ export function TaskProvider({ children }) {
     );
   }
 
+  function toggleTask(taskId) {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId
+          ? {
+              ...task,
+              completed: !task.completed,
+            }
+          : task
+      )
+    );
+  }
+
   return (
     <TaskContext.Provider
       value={{
@@ -38,6 +51,7 @@ export function TaskProvider({ children }) {
         addTask,
         removeTask,
         editTask,
+        toggleTask,
       }}
     >
       {children}
