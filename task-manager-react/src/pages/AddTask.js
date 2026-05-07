@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { TaskContext } from "../context/TaskContext";
 
@@ -13,7 +13,10 @@ function AddTask() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (!title.trim()) return;
+    if (!title.trim()) {
+      alert("Digite uma tarefa.");
+      return;
+    }
 
     const newTask = {
       id: Date.now(),
@@ -29,19 +32,25 @@ function AddTask() {
   }
 
   return (
-    <div>
-      <h1>Add Task</h1>
+    <div className="container">
+      <div className="header">
+        <h1>Nova tarefa</h1>
 
-      <form onSubmit={handleSubmit}>
+        <Link to="/" className="back-button">
+          Voltar
+        </Link>
+      </div>
+
+      <form className="task-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Digite uma tarefa"
+          placeholder="Digite sua tarefa"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
 
         <button type="submit">
-          Adicionar
+          Adicionar tarefa
         </button>
       </form>
     </div>

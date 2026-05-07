@@ -66,3 +66,38 @@ button {
   text-align: center;
   margin-top: 24px;
 }
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-form input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.task-form button {
+  background: #222;
+  color: #fff;
+  padding: 14px;
+  font-size: 16px;
+}
+
+.back-button {
+  background: #ddd;
+  color: #222;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+button:hover,
+.add-button:hover,
+.back-button:hover {
+  opacity: 0.9;
+}
