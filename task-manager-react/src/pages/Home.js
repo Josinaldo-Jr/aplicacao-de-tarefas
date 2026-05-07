@@ -1,7 +1,7 @@
 function Home() {
   return (
     <div>
-      <h1>Lista de Tarefas</h1>
+      <h1>Task Manager</h1>
     </div>
   );
 }

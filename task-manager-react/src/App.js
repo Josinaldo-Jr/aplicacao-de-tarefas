@@ -1,10 +1,16 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import AddTask from "./pages/AddTask";
 
 function App() {
   return (
-    <div>
-      <h1>Task Manager</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add-task" element={<AddTask />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

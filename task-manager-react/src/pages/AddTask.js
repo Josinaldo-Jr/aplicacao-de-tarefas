@@ -1,7 +1,7 @@
 function AddTask() {
   return (
     <div>
-      <h1>Adicionar Tarefa</h1>
+      <h1>Add Task</h1>
     </div>
   );
 }
